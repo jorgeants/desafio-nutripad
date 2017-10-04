@@ -1,0 +1,17 @@
+version: '2'
+ 
+services:
+  box:
+    image: 'busybox'
+    volumes:
+      - '/box'
+ 
+  desafio-nutripad:
+    build: .
+    command: './script/start'
+    ports:
+      - '3000:3000'
+    volumes:
+      - '.:/usr/src/desafio-nutripad'
+    volumes_from:
+      - 'box'
