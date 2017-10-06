@@ -51,13 +51,13 @@ class Number
 	end
 
 	def find (key)
-		result = self.find_or_separe (key)
+		result = find_or_separe (key)
 		result = result.join(" ") if result.kind_of?(Array)
 		result
 	end
 
 	def find_or_separe (key)
-		WORDS.key?(key) ? WORDS[key] : self.separe_digits(key)
+		WORDS.key?(key) ? WORDS[key] : separe_digits(key)
 	end
 
 	def separe_digits (number)
